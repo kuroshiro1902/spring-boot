@@ -6,9 +6,10 @@ import com.example.springbootlearning.auth.dto.requests.SignupRequest;
 import com.example.springbootlearning.auth.dto.responses.LoginResponse;
 import com.example.springbootlearning.auth.dto.responses.SignupResponse;
 import com.example.springbootlearning.common.exceptions.UnauthorizedException;
+import com.example.springbootlearning.security.JwtService;
 import com.example.springbootlearning.user.User;
 import com.example.springbootlearning.user.UserService;
-import com.example.springbootlearning.user.dto.requests.FindRequest;
+import com.example.springbootlearning.user.dto.requests.FindUserRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,7 @@ public class AuthService {
   private final UserService userService;
   private final PasswordEncoder passwordEncoder;
   private final AuthMapper authMapper;
+  private final JwtService jwtService;
 
   public SignupResponse signup(SignupRequest request) {
     String hashedPassword = passwordEncoder.encode(request.password());
@@ -35,14 +37,15 @@ public class AuthService {
   public LoginResponse login(LoginRequest request) {
     String username = request.username();
     String password = request.password();
-    FindRequest findRequest = new FindRequest();
-    findRequest.setUsername(username);
-    User user = userService.findOneOrThrow(findRequest);
+    FindUserRequest findUserRequest = new FindUserRequest();
+    findUserRequest.setUsername(username);
+    User user = userService.findOneOrThrow(findUserRequest);
 
     if (!passwordEncoder.matches(password, user.getPassword())) {
       throw new UnauthorizedException("Password is incorrect");
     }
 
-    return authMapper.toLoginResponse(user);
+    String accessToken = jwtService.generateToken(user);
+    return authMapper.toLoginResponse(user, accessToken);
   }
 }

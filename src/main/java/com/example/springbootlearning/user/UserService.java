@@ -2,7 +2,7 @@ package com.example.springbootlearning.user;
 
 import com.example.springbootlearning.common.exceptions.NotFoundException;
 import com.example.springbootlearning.user.dto.UserMapper;
-import com.example.springbootlearning.user.dto.requests.FindRequest;
+import com.example.springbootlearning.user.dto.requests.FindUserRequest;
 import org.springframework.data.domain.*;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
@@ -46,7 +46,7 @@ public class UserService {
     return userRepository.save(user);
   }
 
-  public User findOneOrThrow(FindRequest request) {
+  public User findOneOrThrow(FindUserRequest request) {
     Specification<User> spec = (root, query, cb) -> null;
     if (request.getId() != null) {
       spec = spec.and((root, query, cb) -> cb.equal(root.get("id"), request.getId()));

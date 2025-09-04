@@ -3,7 +3,7 @@ spring.application.name=springbootlearning
 # Database Configuration
 spring.datasource.url=jdbc:postgresql://localhost:5432/springbootdb
 spring.datasource.username=postgres
-spring.datasource.password=jason1902
+spring.datasource.password=password
 
 # Tùy chọn cấu hình JPA/Hibernate
 spring.jpa.hibernate.ddl-auto=update

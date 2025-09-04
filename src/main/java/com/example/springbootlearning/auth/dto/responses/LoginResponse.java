@@ -8,6 +8,7 @@ public record LoginResponse(
   String email,
   String username,
   LocalDateTime createdAt,
-  LocalDateTime updatedAt
+  LocalDateTime updatedAt,
+  String accessToken
 ) {
 }

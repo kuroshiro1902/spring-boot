@@ -10,7 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class FindRequest {
+public class FindUserRequest {
   @Size(max = 50)
   @JsonDeserialize(using = TrimStringDeserializer.class)
   private String id;

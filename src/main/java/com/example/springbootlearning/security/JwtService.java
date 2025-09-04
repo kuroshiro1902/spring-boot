@@ -16,6 +16,10 @@ public class JwtService {
   @Value("${jwt.secret}")
   private String SECRET_KEY;
 
+  {
+    System.out.println(this.SECRET_KEY);
+  }
+
   private boolean isTokenExpired(String token) {
     return extractClaim(token, Claims::getExpiration).before(new Date());
   }

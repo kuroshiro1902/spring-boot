@@ -27,14 +27,15 @@ public class AuthMapper {
     );
   }
 
-  public LoginResponse toLoginResponse(User user) {
+  public LoginResponse toLoginResponse(User user, String accessToken) {
     return new LoginResponse(
         user.getId(),
         user.getName(),
         user.getEmail(),
         user.getUsername(),
         user.getCreatedAt(),
-        user.getUpdatedAt()
+        user.getUpdatedAt(),
+        accessToken
     );
   }
 }
