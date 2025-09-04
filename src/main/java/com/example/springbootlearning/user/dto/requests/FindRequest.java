@@ -1,25 +1,29 @@
 package com.example.springbootlearning.user.dto.requests;
 
-import com.example.springbootlearning.base.deserializers.TrimStringDeserializer;
+import com.example.springbootlearning.common.deserializers.TrimStringDeserializer;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import jakarta.validation.constraints.Size;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @NoArgsConstructor
+@Getter
+@Setter
 public class FindRequest {
   @Size(max = 50)
   @JsonDeserialize(using = TrimStringDeserializer.class)
-  public String id;
+  private String id;
 
   @Size(max = 50)
   @JsonDeserialize(using = TrimStringDeserializer.class)
-  public String name;
+  private String name;
 
   @Size(max = 100)
   @JsonDeserialize(using = TrimStringDeserializer.class)
-  public String email;
+  private String email;
 
   @Size(max = 50)
   @JsonDeserialize(using = TrimStringDeserializer.class)
-  public String username;
+  private String username;
 }

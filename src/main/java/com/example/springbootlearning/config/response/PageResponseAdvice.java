@@ -1,4 +1,4 @@
-package com.example.springbootlearning.config;
+package com.example.springbootlearning.config.response;
 
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;

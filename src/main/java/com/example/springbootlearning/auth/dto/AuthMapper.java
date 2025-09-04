@@ -1,6 +1,7 @@
 package com.example.springbootlearning.auth.dto;
 
 import com.example.springbootlearning.auth.dto.requests.SignupRequest;
+import com.example.springbootlearning.auth.dto.responses.LoginResponse;
 import com.example.springbootlearning.auth.dto.responses.SignupResponse;
 import com.example.springbootlearning.user.User;
 import org.springframework.stereotype.Component;
@@ -23,6 +24,17 @@ public class AuthMapper {
         user.getEmail(),
         user.getUsername(),
         user.getCreatedAt()
+    );
+  }
+
+  public LoginResponse toLoginResponse(User user) {
+    return new LoginResponse(
+        user.getId(),
+        user.getName(),
+        user.getEmail(),
+        user.getUsername(),
+        user.getCreatedAt(),
+        user.getUpdatedAt()
     );
   }
 }

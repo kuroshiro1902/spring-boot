@@ -39,7 +39,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 
     if (id != null && SecurityContextHolder.getContext().getAuthentication() == null) {
       FindRequest userFindRequest = new FindRequest();
-      userFindRequest.id = id;
+      userFindRequest.setId(id);
       User user = userService.findOneOrThrow(userFindRequest);
 
       if (jwtService.isTokenValid(token, user)) {

@@ -1,4 +1,4 @@
-package com.example.springbootlearning.base;
+package com.example.springbootlearning.common.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;

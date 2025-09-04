@@ -1,6 +1,6 @@
 package com.example.springbootlearning.auth.dto.requests;
 
-import com.example.springbootlearning.base.deserializers.TrimStringDeserializer;
+import com.example.springbootlearning.common.deserializers.TrimStringDeserializer;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

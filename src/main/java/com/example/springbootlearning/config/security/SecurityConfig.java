@@ -1,4 +1,4 @@
-package com.example.springbootlearning.config;
+package com.example.springbootlearning.config.security;
 
 import com.example.springbootlearning.security.JwtAuthFilter;
 import lombok.RequiredArgsConstructor;
