@@ -1,7 +1,5 @@
 package com.example.springbootlearning.user;
 
-import com.example.springbootlearning.user.dto.requests.CreateUserRequest;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
@@ -20,8 +18,4 @@ public class UserController {
     return userService.search(name, email, page, size, sortBy);
   }
 
-  @PostMapping
-  public User create(@Valid @RequestBody CreateUserRequest request) {
-    return userService.create(request);
-  }
 }

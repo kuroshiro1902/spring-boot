@@ -10,6 +10,12 @@ import lombok.Setter;
 @Getter
 @Setter
 public class User extends Base {
+  @Column(name = "username", nullable = false, unique = true, length = 255)
+  String username;
+
+  @Column (name = "password", nullable = false, columnDefinition = "TEXT")
+  String password;
+
   @Column(name = "name", nullable = false, length = 255)
   String name;
 
