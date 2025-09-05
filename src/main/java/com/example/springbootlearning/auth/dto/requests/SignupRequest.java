@@ -18,7 +18,10 @@ public record SignupRequest(
   String password,
 
   @NotBlank(message = "Email must not be blank")
-  @Email(message = "Email must be a valid email address")
+  @Email(
+    regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+    message = "Email must be a valid email address"
+  )
   @Size(max = 100, message = "Email length must be at most 100")
   @JsonDeserialize(using = TrimStringDeserializer.class)
   String email) {

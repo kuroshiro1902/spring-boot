@@ -1,5 +1,7 @@
-package com.example.springbootlearning.user;
+package com.example.springbootlearning.user.controllers;
 
+import com.example.springbootlearning.user.entities.User;
+import com.example.springbootlearning.user.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
@@ -7,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/users")
 @RequiredArgsConstructor
 public class UserController {
 

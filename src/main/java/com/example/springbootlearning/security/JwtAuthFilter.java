@@ -1,7 +1,8 @@
 package com.example.springbootlearning.security;
 
-import com.example.springbootlearning.user.*;
 import com.example.springbootlearning.user.dto.requests.FindUserRequest;
+import com.example.springbootlearning.user.entities.User;
+import com.example.springbootlearning.user.services.UserService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

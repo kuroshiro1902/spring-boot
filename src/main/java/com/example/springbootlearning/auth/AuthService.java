@@ -7,8 +7,8 @@ import com.example.springbootlearning.auth.dto.responses.LoginResponse;
 import com.example.springbootlearning.auth.dto.responses.SignupResponse;
 import com.example.springbootlearning.common.exceptions.UnauthorizedException;
 import com.example.springbootlearning.security.JwtService;
-import com.example.springbootlearning.user.User;
-import com.example.springbootlearning.user.UserService;
+import com.example.springbootlearning.user.entities.User;
+import com.example.springbootlearning.user.services.UserService;
 import com.example.springbootlearning.user.dto.requests.FindUserRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -29,7 +29,7 @@ public class AuthService {
     User user = authMapper.toUserEntity(request);
     user.setPassword(hashedPassword);
 
-    User savedUser = userService.create(user);
+    User savedUser = userService.createOne(user);
 
     return authMapper.toSignupResponse(savedUser);
   }

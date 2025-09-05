@@ -1,6 +1,5 @@
 package com.example.springbootlearning.user.dto;
 
-import com.example.springbootlearning.user.User;
 import org.springframework.stereotype.Component;
 
 @Component

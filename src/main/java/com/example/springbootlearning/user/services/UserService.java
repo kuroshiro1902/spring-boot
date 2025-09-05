@@ -1,12 +1,17 @@
-package com.example.springbootlearning.user;
+package com.example.springbootlearning.user.services;
 
+import com.example.springbootlearning.auth.entities.Permission;
+import com.example.springbootlearning.auth.services.PermissionService;
 import com.example.springbootlearning.common.exceptions.NotFoundException;
+import com.example.springbootlearning.user.repositories.UserRepository;
 import com.example.springbootlearning.user.dto.UserMapper;
 import com.example.springbootlearning.user.dto.requests.FindUserRequest;
+import com.example.springbootlearning.user.entities.User;
 import org.springframework.data.domain.*;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -16,6 +21,8 @@ public class UserService {
 
   private final UserRepository userRepository;
   private final UserMapper userMapper;
+  private final PermissionService permissionService;
+  private final UserPermissionService userPermissionService;
 
   public Page<User> search(
       Optional<String> name,
@@ -42,8 +49,13 @@ public class UserService {
     return userRepository.findAll(spec, pageable);
   }
 
-  public User create(User user) {
-    return userRepository.save(user);
+  @Transactional
+  public User createOne(User user) {
+    Permission defaultPermission = permissionService.findOneByCodeOrThrow("default_user");
+    User savedUser = userRepository.save(user);
+    userPermissionService.assignPermission(savedUser, defaultPermission);
+
+    return savedUser;
   }
 
   public User findOneOrThrow(FindUserRequest request) {

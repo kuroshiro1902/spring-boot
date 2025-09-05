@@ -35,15 +35,7 @@ public class GlobalExceptionConfig {
   @ExceptionHandler(DataIntegrityViolationException.class)
   public ResponseEntity<Map<String, String>> handleDataIntegrityViolation(DataIntegrityViolationException ex) {
     Map<String, String> errors = new HashMap<>();
-    String rootMessage = Objects.requireNonNull(ex.getRootCause()).getMessage();
-
-    String detailMessage = rootMessage;
-    int detailIndex = rootMessage.indexOf("Detail:");
-    if (detailIndex != -1) {
-      detailMessage = rootMessage.substring(detailIndex + 7).trim();
-    }
-
-    errors.put("message", detailMessage);
+    errors.put("message", "Duplicate key or data integrity violation");
     return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
   }
 
@@ -52,6 +44,13 @@ public class GlobalExceptionConfig {
     Map<String, String> errors = new HashMap<>();
     errors.put("message", ex.getMessage());
     return ResponseEntity.status(ex.getStatus()).body(errors);
+  }
+
+  @ExceptionHandler(Exception.class)
+  public ResponseEntity<Map<String, String>> handleGenericException(Exception ex) {
+    Map<String, String> errors = new HashMap<>();
+    errors.put("message", "Internal server error occurred");
+    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errors);
   }
 
 }
