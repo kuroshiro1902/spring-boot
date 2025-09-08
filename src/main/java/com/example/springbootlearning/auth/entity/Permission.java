@@ -1,9 +1,10 @@
-package com.example.springbootlearning.auth.entities;
+package com.example.springbootlearning.auth.entity;
 
-import com.example.springbootlearning.common.entities.Base;
+import com.example.springbootlearning.common.entity.Base;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.lang.Nullable;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -20,6 +21,7 @@ public class Permission extends Base {
   String code;
 
   @Column(length = 1000)
+  @Nullable
   String description;
 
   @OneToMany(mappedBy = "permission", cascade = CascadeType.ALL, orphanRemoval = true)

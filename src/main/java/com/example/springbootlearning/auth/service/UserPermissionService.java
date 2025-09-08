@@ -1,9 +1,9 @@
-package com.example.springbootlearning.auth.services;
+package com.example.springbootlearning.auth.service;
 
-import com.example.springbootlearning.auth.entities.Permission;
-import com.example.springbootlearning.auth.repositories.UserPermissionRepository;
-import com.example.springbootlearning.user.entities.User;
-import com.example.springbootlearning.auth.entities.UserPermission;
+import com.example.springbootlearning.auth.entity.Permission;
+import com.example.springbootlearning.auth.repository.UserPermissionRepository;
+import com.example.springbootlearning.user.entity.User;
+import com.example.springbootlearning.auth.entity.UserPermission;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

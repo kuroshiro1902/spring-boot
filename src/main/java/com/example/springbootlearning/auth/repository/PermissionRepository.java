@@ -1,6 +1,6 @@
-package com.example.springbootlearning.auth.repositories;
+package com.example.springbootlearning.auth.repository;
 
-import com.example.springbootlearning.auth.entities.Permission;
+import com.example.springbootlearning.auth.entity.Permission;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;

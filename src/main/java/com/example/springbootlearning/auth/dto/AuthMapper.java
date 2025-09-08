@@ -3,7 +3,7 @@ package com.example.springbootlearning.auth.dto;
 import com.example.springbootlearning.auth.dto.request.SignupRequest;
 import com.example.springbootlearning.auth.dto.response.LoginResponse;
 import com.example.springbootlearning.auth.dto.response.SignupResponse;
-import com.example.springbootlearning.user.entities.User;
+import com.example.springbootlearning.user.entity.User;
 import org.springframework.stereotype.Component;
 
 @Component

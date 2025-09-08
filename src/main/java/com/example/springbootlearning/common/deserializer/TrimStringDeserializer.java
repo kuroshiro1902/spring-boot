@@ -1,4 +1,4 @@
-package com.example.springbootlearning.common.deserializers;
+package com.example.springbootlearning.common.deserializer;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;

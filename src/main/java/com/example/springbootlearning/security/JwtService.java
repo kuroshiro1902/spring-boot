@@ -1,6 +1,6 @@
 package com.example.springbootlearning.security;
 
-import com.example.springbootlearning.user.entities.User;
+import com.example.springbootlearning.user.entity.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

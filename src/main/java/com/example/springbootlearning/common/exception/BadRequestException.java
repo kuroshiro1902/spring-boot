@@ -1,4 +1,4 @@
-package com.example.springbootlearning.common.exceptions;
+package com.example.springbootlearning.common.exception;
 
 import org.springframework.http.HttpStatus;
 

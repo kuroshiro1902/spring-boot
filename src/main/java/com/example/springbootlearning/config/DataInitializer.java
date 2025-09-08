@@ -1,7 +1,7 @@
 package com.example.springbootlearning.config;
 
-import com.example.springbootlearning.auth.entities.Permission;
-import com.example.springbootlearning.auth.services.PermissionService;
+import com.example.springbootlearning.auth.entity.Permission;
+import com.example.springbootlearning.auth.service.PermissionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

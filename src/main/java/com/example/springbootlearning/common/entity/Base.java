@@ -1,4 +1,4 @@
-package com.example.springbootlearning.common.entities;
+package com.example.springbootlearning.common.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -6,6 +6,7 @@ import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.lang.Nullable;
 
 import java.time.LocalDateTime;
 
@@ -28,5 +29,6 @@ public abstract class Base {
   private LocalDateTime updatedAt;
 
   @Column(name = "deleted_at")
+  @Nullable
   private LocalDateTime deletedAt;
 }

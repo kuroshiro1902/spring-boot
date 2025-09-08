@@ -1,7 +1,7 @@
-package com.example.springbootlearning.user.controllers;
+package com.example.springbootlearning.user.controller;
 
-import com.example.springbootlearning.user.entities.User;
-import com.example.springbootlearning.user.services.UserService;
+import com.example.springbootlearning.user.entity.User;
+import com.example.springbootlearning.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;

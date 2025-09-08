@@ -1,8 +1,8 @@
-package com.example.springbootlearning.auth.services;
+package com.example.springbootlearning.auth.service;
 
-import com.example.springbootlearning.auth.entities.Permission;
-import com.example.springbootlearning.auth.repositories.PermissionRepository;
-import com.example.springbootlearning.common.exceptions.NotFoundException;
+import com.example.springbootlearning.auth.entity.Permission;
+import com.example.springbootlearning.auth.repository.PermissionRepository;
+import com.example.springbootlearning.common.exception.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

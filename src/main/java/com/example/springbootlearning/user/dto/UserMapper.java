@@ -3,7 +3,7 @@ package com.example.springbootlearning.user.dto;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UserMapper {
+public final class UserMapper {
 
 //  void updateEntity(@MappingTarget User user, UserUpdateRequest request);
 

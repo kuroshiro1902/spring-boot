@@ -1,7 +1,6 @@
 package com.example.springbootlearning.config.exception;
 
-import com.example.springbootlearning.common.exceptions.AppRuntimeException;
-import com.example.springbootlearning.common.exceptions.NotFoundException;
+import com.example.springbootlearning.common.exception.AppRuntimeException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 @RestControllerAdvice
 public class GlobalExceptionConfig {
