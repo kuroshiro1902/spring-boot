@@ -1,4 +1,4 @@
-package com.example.springbootlearning.auth.dto.requests;
+package com.example.springbootlearning.auth.dto.request;
 
 import com.example.springbootlearning.common.deserializers.TrimStringDeserializer;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;

@@ -1,7 +1,7 @@
-package com.example.springbootlearning.user.entities;
+package com.example.springbootlearning.auth.entities;
 
-import com.example.springbootlearning.auth.entities.Permission;
 import com.example.springbootlearning.common.entities.Base;
+import com.example.springbootlearning.user.entities.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

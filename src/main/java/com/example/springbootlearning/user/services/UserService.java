@@ -2,10 +2,11 @@ package com.example.springbootlearning.user.services;
 
 import com.example.springbootlearning.auth.entities.Permission;
 import com.example.springbootlearning.auth.services.PermissionService;
+import com.example.springbootlearning.auth.services.UserPermissionService;
 import com.example.springbootlearning.common.exceptions.NotFoundException;
 import com.example.springbootlearning.user.repositories.UserRepository;
 import com.example.springbootlearning.user.dto.UserMapper;
-import com.example.springbootlearning.user.dto.requests.FindUserRequest;
+import com.example.springbootlearning.user.dto.request.FindUserRequest;
 import com.example.springbootlearning.user.entities.User;
 import org.springframework.data.domain.*;
 import org.springframework.data.jpa.domain.Specification;

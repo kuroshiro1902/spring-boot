@@ -1,4 +1,4 @@
-package com.example.springbootlearning.auth.dto.responses;
+package com.example.springbootlearning.auth.dto.response;
 
 import java.time.LocalDateTime;
 

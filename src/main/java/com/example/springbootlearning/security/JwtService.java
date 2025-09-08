@@ -17,7 +17,7 @@ public class JwtService {
   private String SECRET_KEY;
 
   {
-    System.out.println(this.SECRET_KEY);
+    System.out.println(SECRET_KEY);
   }
 
   private boolean isTokenExpired(String token) {
@@ -34,8 +34,9 @@ public class JwtService {
   }
 
   public <T> T extractClaim(String token, Function<Claims, T> resolver) {
-    final Claims claims = Jwts.parser()
+    final Claims claims = Jwts.parserBuilder()
         .setSigningKey(SECRET_KEY)
+        .build()
         .parseClaimsJws(token)
         .getBody();
     return resolver.apply(claims);

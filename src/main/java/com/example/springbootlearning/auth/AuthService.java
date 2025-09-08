@@ -1,15 +1,15 @@
 package com.example.springbootlearning.auth;
 
 import com.example.springbootlearning.auth.dto.AuthMapper;
-import com.example.springbootlearning.auth.dto.requests.LoginRequest;
-import com.example.springbootlearning.auth.dto.requests.SignupRequest;
-import com.example.springbootlearning.auth.dto.responses.LoginResponse;
-import com.example.springbootlearning.auth.dto.responses.SignupResponse;
+import com.example.springbootlearning.auth.dto.request.LoginRequest;
+import com.example.springbootlearning.auth.dto.request.SignupRequest;
+import com.example.springbootlearning.auth.dto.response.LoginResponse;
+import com.example.springbootlearning.auth.dto.response.SignupResponse;
 import com.example.springbootlearning.common.exceptions.UnauthorizedException;
 import com.example.springbootlearning.security.JwtService;
 import com.example.springbootlearning.user.entities.User;
 import com.example.springbootlearning.user.services.UserService;
-import com.example.springbootlearning.user.dto.requests.FindUserRequest;
+import com.example.springbootlearning.user.dto.request.FindUserRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

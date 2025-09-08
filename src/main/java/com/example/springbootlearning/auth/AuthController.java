@@ -1,7 +1,8 @@
 package com.example.springbootlearning.auth;
 
-import com.example.springbootlearning.auth.dto.requests.*;
-import com.example.springbootlearning.auth.dto.responses.*;
+import com.example.springbootlearning.auth.dto.request.*;
+import com.example.springbootlearning.auth.dto.response.*;
+import com.example.springbootlearning.common.dto.response.ResponseData;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +22,7 @@ public class AuthController {
   }
 
   @PostMapping("/login")
-  public LoginResponse login(@Valid @RequestBody LoginRequest request) {
-    return authService.login(request);
+  public ResponseData<LoginResponse> login(@Valid @RequestBody LoginRequest request) {
+    return ResponseData.success(authService.login(request));
   }
 }
