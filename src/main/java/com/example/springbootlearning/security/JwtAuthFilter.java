@@ -1,6 +1,6 @@
 package com.example.springbootlearning.security;
 
-import com.example.springbootlearning.user.dto.request.FindUserRequest;
+import com.example.springbootlearning.user.dto.input.FindUserInput;
 import com.example.springbootlearning.user.entity.User;
 import com.example.springbootlearning.user.service.UserService;
 import jakarta.servlet.FilterChain;
@@ -39,9 +39,9 @@ public class JwtAuthFilter extends OncePerRequestFilter {
     String id = jwtService.extractId(token);
 
     if (id != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-      FindUserRequest findUserRequest = new FindUserRequest();
-      findUserRequest.setId(id);
-      User user = userService.findOneOrThrow(findUserRequest);
+      FindUserInput findUserInput = new FindUserInput();
+      findUserInput.setId(id);
+      User user = userService.findOneOrThrow(findUserInput);
 
       if (jwtService.isTokenValid(token, user)) {
         UsernamePasswordAuthenticationToken authToken =

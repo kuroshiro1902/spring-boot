@@ -1,4 +1,4 @@
-package com.example.springbootlearning.common.dto.response;
+package com.example.springbootlearning.common.dto;
 
 public record ResponseData<T>(T data, String message, boolean success) {
 

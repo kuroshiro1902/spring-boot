@@ -1,14 +1,12 @@
 package com.example.springbootlearning.auth.dto;
 
-import com.example.springbootlearning.auth.dto.request.SignupRequest;
-import com.example.springbootlearning.auth.dto.response.LoginResponse;
-import com.example.springbootlearning.auth.dto.response.SignupResponse;
+import com.example.springbootlearning.auth.dto.input.SignupInput;
 import com.example.springbootlearning.user.entity.User;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AuthMapper {
-  public User toUserEntity(SignupRequest request) {
+public class AuthDtoMapper {
+  public User toUserEntity(SignupInput request) {
     User user = new User();
     user.setName(request.name());
     user.setEmail(request.email());

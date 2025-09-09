@@ -1,4 +1,4 @@
-package com.example.springbootlearning.user.dto.request;
+package com.example.springbootlearning.user.dto.input;
 
 import com.example.springbootlearning.common.deserializer.TrimStringDeserializer;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -10,7 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class FindUserRequest {
+public class FindUserInput {
   @Size(max = 50)
   @JsonDeserialize(using = TrimStringDeserializer.class)
   private String id;

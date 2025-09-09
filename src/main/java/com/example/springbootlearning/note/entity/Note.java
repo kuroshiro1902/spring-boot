@@ -1,4 +1,4 @@
-package com.example.springbootlearning.note;
+package com.example.springbootlearning.note.entity;
 
 import com.example.springbootlearning.common.entity.Base;
 import com.example.springbootlearning.user.entity.User;
